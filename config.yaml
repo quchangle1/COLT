@@ -1,0 +1,56 @@
+ToolLens:
+  base_model_name : ["contriever-base-msmarco-ToolLens"]
+  data_path: './datasets'
+  batch_size_train: 2048 # the batch size for training
+  batch_size_test: 256 # the batch size for testing
+  topk: [1,2,3,4,5,10, 20, 40, 80] # the topks metrics for evaluation
+  neg_num: 10 # number of negatives used for BPR loss. All the experiments use 1. yes  
+  
+  # search hyperparameters
+  # the following are the best settings
+  aug_type: "ED" # options: ED, MD, OP
+  ed_interval: 1 # by how many epochs to dropout edge, default is 1
+  embedding_sizes: [768] # the embedding size for query, scene, and tool
+  num_layerss: [1] # number of layers for the infomation progagation over the tool- and scene-level graphs
+
+  # the following dropout rates are with respect to the "aug_type", i.e., if aug_type is ED, the following dropout rates are for ED.
+  tool_level_ratios: [0.2] # the dropout ratio for tool-view graph
+  scene_level_ratios: [0.2] # the dropout ratio for scene-view graph
+  scene_agg_ratios: [0.2] # the dropout ratio for scene-tool affiliation graph
+
+  lrs: [1.0e-3] # learning rate
+  l2_regs: [1.0e-7] # the l2 regularization weight: lambda_2
+  c_lambdas: [0.04] # the contrastive loss weight: lambda_1 yes w/o semantic learning w/o cl
+  c_temps: [0.1] # the temperature in the contrastive loss: tau
+
+  epochs: 200 # number of epochs to train
+  test_interval: 4 # by how many epochs to run the validation and testing.
+
+ToolBench:
+  base_model_name : ["contriever-base-msmarco-ToolBench"]
+  data_path: './datasets'
+  batch_size_train: 2048 # the batch size for training
+  batch_size_test: 256 # the batch size for testing
+  topk: [1,2,3,4,5,10, 20, 40, 80] # the topks metrics for evaluation
+  neg_num: 10 # number of negatives used for BPR loss. All the experiments use 1.
+  
+  # search hyperparameters
+  # the following are the best settings
+  aug_type: "ED" # options: ED, MD, OP
+  ed_interval: 1 # by how many epochs to dropout edge, default is 1
+  embedding_sizes: [768] # the embedding size for query, scene, and tool
+  num_layerss: [1] # number of layers for the infomation progagation over the tool- and scene-level graphs
+
+  # the following dropout rates are with respect to the "aug_type", i.e., if aug_type is ED, the following dropout rates are for ED.
+  tool_level_ratios: [0.2] # the dropout ratio for tool-view graph
+  scene_level_ratios: [0.2] # the dropout ratio for scene-view graph
+  scene_agg_ratios: [0.2] # the dropout ratio for scene-tool affiliation graph
+
+  lrs: [1.0e-3] # learning rate
+  l2_regs: [1.0e-7] # the l2 regularization weight: lambda_2
+  c_lambdas: [0.04] # the contrastive loss weight: lambda_1
+  c_temps: [0.05] # the temperature in the contrastive loss: tau
+
+  epochs: 100 # number of epochs to train
+  test_interval: 1 # by how many epochs to run the validation and testing.
+# w/o semantic w/o cl  lambda 
