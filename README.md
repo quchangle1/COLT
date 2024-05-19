@@ -1,5 +1,5 @@
 # COLT
-The implementation for ACL 2024 Submission: Towards Completeness-Oriented Tool Retrieval for Large Language Models.
+The implementation for CIKM 2024 Submission: Towards Completeness-Oriented Tool Retrieval for Large Language Models.
 
 ## How to run the code
 1. Download PLMs from Huggingface and make a folder with the name PLMs
