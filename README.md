@@ -18,7 +18,7 @@ pandas version: 1.3.5
 torch version: 1.13.1
 ```
 
-## Reference
+## Citation
 
 If you find our code or work useful for your research, please cite our work.
 
