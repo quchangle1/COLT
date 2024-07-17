@@ -20,15 +20,13 @@ torch version: 1.13.1
 
 ## Reference
 
-Our implementations and experiments of Semantic Learning are conducted based on [BEIR](https://github.com/beir-cellar/beir), which is a popular benchmark containing diverse IR tasks. :
+If you find our code or work useful for your research, please cite our work.
 
 ```
-@inproceedings{
-    thakur2021beir,
-    title={{BEIR}: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models},
-    author={Nandan Thakur and Nils Reimers and Andreas R{\"u}ckl{\'e} and Abhishek Srivastava and Iryna Gurevych},
-    booktitle={Thirty-fifth Conference on Neural Information Processing Systems Datasets and Benchmarks Track (Round 2)},
-    year={2021},
-    url={https://openreview.net/forum?id=wCu6T5xFjeJ}
+@inproceedings{qu2024colt,
+  title={COLT: Towards Completeness-Oriented Tool Retrieval for Large Language Models},
+  author={Qu, Changle and Dai, Sunhao and Wei, Xiaochi and Cai, Hengyi and Wang, Shuaiqiang and Yin, Dawei and Xu, Jun and Wen, Ji-Rong},
+  booktitle={Proceedings of the 33nd ACM International Conference on Information and Knowledge Management},
+  year={2024}
 }
 ```
