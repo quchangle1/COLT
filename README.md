@@ -10,7 +10,9 @@ The implementation for CIKM 2024: Towards Completeness-Oriented Tool Retrieval f
 2. Run Semantic Learning:
 	> python train_sbert.py
 3. Run Collaborative Learning:
-	> python train.py -g 0 -m COLT -d tool
+	> python train.py -g 0 -m COLT -d ToolLens
+
+You can specify the gpu id, the used dataset by cmd line arguments.
 
 ## Environment
 
