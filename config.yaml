@@ -24,7 +24,7 @@ ToolLens:
   c_temps: [0.1] # the temperature in the contrastive loss: tau
 
   epochs: 200 # number of epochs to train
-  test_interval: 4 # by how many epochs to run the validation and testing.
+  test_interval: 1 # by how many epochs to run the validation and testing.
 
 ToolBench:
   base_model_name : ["contriever-base-msmarco-ToolBench"]
@@ -53,4 +53,3 @@ ToolBench:
 
   epochs: 100 # number of epochs to train
   test_interval: 1 # by how many epochs to run the validation and testing.
-# w/o semantic w/o cl  lambda 
