@@ -17,8 +17,6 @@ logging.basicConfig(format='%(asctime)s - %(message)s',
 
 dataset = "ToolLens"
 data_path = "./datasets/ToolLens"
-# dataset = "ToolBench"
-# data_path = "./datasets/ToolBench"
 corpus, queries, qrels = GenericDataLoader(data_path).load(split="train")
 dev_corpus, dev_queries, dev_qrels = GenericDataLoader(data_path).load(split="test")
 model_name="./PLMs/contriever-base-msmarco"
