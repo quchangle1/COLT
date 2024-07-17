@@ -32,7 +32,7 @@ If you find our code or work useful for your research, please cite our work.
 @inproceedings{qu2024colt,
   title={COLT: Towards Completeness-Oriented Tool Retrieval for Large Language Models},
   author={Qu, Changle and Dai, Sunhao and Wei, Xiaochi and Cai, Hengyi and Wang, Shuaiqiang and Yin, Dawei and Xu, Jun and Wen, Ji-Rong},
-  booktitle={Proceedings of the 33nd ACM International Conference on Information and Knowledge Management},
+  booktitle={Proceedings of the 33rd ACM International Conference on Information and Knowledge Management},
   year={2024}
 }
 ```
