@@ -3,6 +3,10 @@ The implementation for CIKM 2024: Towards Completeness-Oriented Tool Retrieval f
 
 ## How to run the code
 1. Download PLMs from Huggingface and make a folder with the name PLMs
+- **ANCE**: The PLM and description is avaliable [here](https://huggingface.co/sentence-transformers/msmarco-roberta-base-ance-firstp).
+- **TAS-B**: The PLM and description is avaliable [here](https://huggingface.co/sentence-transformers/msmarco-distilbert-base-tas-b).
+- **co-Condensor**: The PLM and description is avaliable [here](https://huggingface.co/sentence-transformers/msmarco-bert-co-condensor).
+- **Contriever**: The PLM and description is avaliable [here](https://huggingface.co/nthakur/contriever-base-msmarco).
 2. Run Semantic Learning:
 	> python train_sbert.py
 3. Run Collaborative Learning:
