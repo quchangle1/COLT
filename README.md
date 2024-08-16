@@ -2,6 +2,10 @@
 The implementation for CIKM 2024: Towards Completeness-Oriented Tool Retrieval for Large Language Models.
 
 ## News
+- **[2024/8/17]** The processed **ToolBench** dataset and **checkpoints** of first-stage semantic learning are released! Please find checkpoints on [HuggingFace](https://huggingface.co/Tool-COLT).
+- **[2024/7/17]** Our **code** and **ToolLens** dataset is released.
+- **[2024/7/16]** COLT is accepted by [**CIKM 2024**](https://cikm2024.org/).
+- **[2024/5/25]** Our [**paper**](https://arxiv.org/abs/2405.16089) is released.
 
 ## How to run the code
 1. Download PLMs from Huggingface and make a folder with the name PLMs
