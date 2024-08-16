@@ -105,21 +105,36 @@ class COLT(nn.Module):
         encode_model = SentenceTransformer(base_model)
         query_file_path = './datasets/{}/queries.jsonl'.format(self.dataset)
         tool_file_path = './datasets/{}/corpus.jsonl'.format(self.dataset)
+        file_path = './datasets/{}/query_tool_test.txt'.format(self.dataset)
+        unique_numbers = set()
+        with open(file_path, 'r') as file:
+            for line in file:
+                number = int(line.split('\t')[0])
+                unique_numbers.add(number)
+        self.test_index = list(unique_numbers)
+        self.test_index.sort()
         queries = []
         tools = []
+        test_queries =[]
         with open(query_file_path, 'r', encoding='utf-8') as query_file,open(tool_file_path, 'r', encoding='utf-8') as tool_file:
             for line in query_file:
                 query = json.loads(line)
                 queries.append(query)
+                if int(query['_id'])in self.test_index:
+                    test_queries.append(query)
             for line in tool_file:
                 tool = json.loads(line)
                 tools.append(tool)
         sorted_queries = sorted(queries, key=lambda x: int(x['_id']))
+        sorted_test_queries = sorted(test_queries, key=lambda x: int(x['_id']))
         query_texts = [query['text'] for query in sorted_queries]
+        test_query_texts =[query['text'] for query in sorted_test_queries]
+        self.test_queries_feature=nn.Parameter(encode_model.encode(test_query_texts, show_progress_bar=True, convert_to_tensor=True).clone().detach())
         self.queries_feature = nn.Parameter(encode_model.encode(query_texts, show_progress_bar=True, convert_to_tensor=True).clone().detach())
         tool_texts=[tool['text'] for tool in tools]
         self.tools_feature = nn.Parameter(encode_model.encode(tool_texts, show_progress_bar=True, convert_to_tensor=True).clone().detach())
         self.scenes_feature = torch.matmul(self.scene_agg_graph_ori, self.tools_feature)
+        self.index_tensor = torch.tensor(self.test_index).unsqueeze(1).expand(-1, self.queries_feature.size(1)).to(self.device)
 
 
     def get_tool_level_graph(self):
@@ -224,6 +239,9 @@ class COLT(nn.Module):
 
 
     def propagate(self, test=False):
+        if test:
+            with torch.no_grad():
+                 self.queries_feature.scatter_(0,self.index_tensor, self.test_queries_feature)
         if test:
             TL_queries_feature, TL_tools_feature = self.one_propagate(self.tool_level_graph_ori, self.queries_feature, self.tools_feature, self.tool_level_dropout, test)
         else:
