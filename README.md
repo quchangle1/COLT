@@ -1,6 +1,8 @@
 # COLT
 The implementation for CIKM 2024: Towards Completeness-Oriented Tool Retrieval for Large Language Models.
 
+## News
+
 ## How to run the code
 1. Download PLMs from Huggingface and make a folder with the name PLMs
 - **ANCE**: The PLM and description is avaliable [here](https://huggingface.co/sentence-transformers/msmarco-roberta-base-ance-firstp).
