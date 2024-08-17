@@ -7,7 +7,7 @@ The implementation for CIKM 2024: Towards Completeness-Oriented Tool Retrieval f
 - **[2024/7/16]** COLT is accepted by [**CIKM 2024**](https://cikm2024.org/).
 - **[2024/5/25]** Our [**paper**](https://arxiv.org/abs/2405.16089) is released.
 
-## How to run the code
+## Quick Start
 1. Download PLMs from Huggingface and make a folder with the name PLMs
 - **ANCE**: The PLM and description is avaliable [here](https://huggingface.co/sentence-transformers/msmarco-roberta-base-ance-firstp).
 - **TAS-B**: The PLM and description is avaliable [here](https://huggingface.co/sentence-transformers/msmarco-distilbert-base-tas-b).
