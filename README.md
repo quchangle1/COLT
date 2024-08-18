@@ -30,6 +30,12 @@ pandas version: 1.3.5
 torch version: 1.13.1
 ```
 
+### Semantic Learning 
+
+For the first phase of semantic learning, you need to install the BEIR.
+
+**BEIR** is a widely used information retrieval framework. You can find the BEIR code repository at this [link](https://github.com/beir-cellar/beir).
+
 ## Citation
 
 If you find our code or work useful for your research, please cite our work.
