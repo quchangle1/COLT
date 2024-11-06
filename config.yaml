@@ -4,7 +4,7 @@ ToolLens:
   batch_size_train: 2048 # the batch size for training
   batch_size_test: 256 # the batch size for testing
   topk: [1,2,3,4,5,10, 20, 40, 80] # the topks metrics for evaluation
-  neg_num: 10 # number of negatives used for BPR loss. All the experiments use 1. yes  
+  neg_num: 10 # number of negatives used for list-wise multi-label loss. 
   
   # search hyperparameters
   # the following are the best settings
@@ -32,7 +32,7 @@ ToolBench:
   batch_size_train: 2048 # the batch size for training
   batch_size_test: 256 # the batch size for testing
   topk: [1,2,3,4,5,10, 20, 40, 80] # the topks metrics for evaluation
-  neg_num: 10 # number of negatives used for BPR loss. All the experiments use 1.
+  neg_num: 10 # number of negatives used for list-wise multi-label loss.
   
   # search hyperparameters
   # the following are the best settings
